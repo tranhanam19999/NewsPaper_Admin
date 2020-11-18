@@ -5,7 +5,7 @@ const Menu_Sidebar = function(props){
     return( 
       <aside className="menu-sidebar d-none d-lg-block">
       <div className="logo">
-        <Link to ='/Dashboard'>
+        <Link to ='/'>
           <img src="images/icon/logo.png" alt="CoolAdmin" />
         </Link>  
       </div>
@@ -13,7 +13,7 @@ const Menu_Sidebar = function(props){
         <nav className="navbar-sidebar">
           <ul className="list-unstyled navbar__list">
             <li>                
-              <Link to ='/Dashboard'>
+              <Link to ='/'>
                   <i className="fas fa-chart-bar" />Dashboard
               </Link>
             </li>
