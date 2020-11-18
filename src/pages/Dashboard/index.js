@@ -2,7 +2,6 @@ import React from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Menu_Sidebar from '../../components/Menu_Sidebar'
-import Header_mobile from '../../components/Header_mobile'
 import Chart_in from '../../components/Chart_Infor'
 import Chart from '../../components/Chart_Total'
 import Top_Countries from '../../components/Top_countries'
@@ -11,8 +10,7 @@ import Calender from '../../components/Calender'
 
 const index = function(props){
     return (         
-        <div className="page-wrapper">
-                <Header_mobile/>
+        <div className="page-wrapper">               
                 <Menu_Sidebar/>
                 <div className= "page-container">
                     <Header/>

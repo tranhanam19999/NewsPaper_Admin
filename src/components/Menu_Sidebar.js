@@ -5,9 +5,9 @@ const Menu_Sidebar = function(props){
     return( 
       <aside className="menu-sidebar d-none d-lg-block">
       <div className="logo">
-        <a href="#">
-          <img src="images/icon/logo.png" alt="Cool Admin" />
-        </a>
+        <Link to ='/Dashboard'>
+          <img src="images/icon/logo.png" alt="CoolAdmin" />
+        </Link>  
       </div>
       <div className="menu-sidebar__content js-scrollbar1">
         <nav className="navbar-sidebar">

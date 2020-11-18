@@ -7,9 +7,9 @@ const Header_mobile = function(props){
         <div className="header-mobile__bar">
           <div className="container-fluid">
             <div className="header-mobile-inner">
-              <a className="logo" href="index.html">
-                <img src="images/icon/logo.png" alt="CoolAdmin" />
-              </a>
+              <Link to ='/Dashboard'>
+                  <img src="images/icon/logo.png" alt="CoolAdmin" />
+              </Link>              
               <button className="hamburger hamburger--slider" type="button">
                 <span className="hamburger-box">
                   <span className="hamburger-inner" />
