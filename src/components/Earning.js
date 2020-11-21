@@ -1,6 +1,9 @@
-import React from 'react'
-
-const Earning = function(props){
+import React, {useEffect}from 'react'
+import {loadScripts} from '../_utils/'
+const Earning  = props =>{
+    useEffect(() =>{
+        document.onload  = loadScripts()
+    },[])
     return (
         <div className="col-lg-9">
         <h2 className="title-1 m-b-25">Earnings By Items</h2>

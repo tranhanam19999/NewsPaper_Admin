@@ -1,6 +1,9 @@
-import React from 'react'
-
-const Chart_Total = function(props){
+import React, {useEffect}from 'react'
+import {loadScripts} from '../_utils/'
+const Chart_Total  = props =>{
+    useEffect(() =>{
+        document.onload  = loadScripts()
+    },[])
     return(
         <div className="col-lg-6">
                 <div className="au-card recent-report">

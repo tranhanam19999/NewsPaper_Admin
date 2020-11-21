@@ -1520,7 +1520,7 @@
   "use strict";
 
   // Dropdown 
-  try {
+  
     var menu = $('.js-item-menu');
     var sub_menu_is_showed = -1;
 
@@ -1552,9 +1552,7 @@
       sub_menu_is_showed = -1;
     });
 
-  } catch (error) {
-    console.log(error);
-  }
+  
 
   var wW = $(window).width();
     // Right Sidebar

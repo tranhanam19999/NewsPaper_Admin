@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Menu_Sidebar from '../../components/Menu_Sidebar'
@@ -8,7 +8,8 @@ import Top_Countries from '../../components/Top_countries'
 import Earning from '../../components/Earning'
 import Calender from '../../components/Calender'
 
-const index = function(props){
+
+const index  = props =>{
     return (         
         <div className="page-wrapper">               
                 <Menu_Sidebar/>

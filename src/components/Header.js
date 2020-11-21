@@ -1,6 +1,9 @@
-import React from 'react';
-
-const Header = function(props) { 
+import React, {useEffect}from 'react'
+import {loadScripts} from '../_utils/'
+const Header  = props =>{
+    useEffect(() =>{
+        document.onload  = loadScripts()
+    },[])
     return(        
         <header className="header-desktop">
         <div className="section__content section__content--p30">

@@ -1,7 +1,9 @@
-import React from 'react'
-
-
-const Overview = function(props){
+import React, {useEffect}from 'react'
+import {loadScripts} from '../_utils/'
+const Overview  = props =>{
+    useEffect(() =>{
+        document.onload  = loadScripts()
+    },[])
     return (
         
       <div className="overview-wrap">

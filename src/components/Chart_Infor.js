@@ -1,7 +1,9 @@
-import React from 'react';
-
-
-const Chart_Infor = function(props){
+import React, {useEffect}from 'react'
+import {loadScripts} from '../_utils/'
+const Chart_Infor  = props =>{
+    useEffect(() =>{
+        document.onload  = loadScripts()
+    },[])
     return (
         <div className="col-sm-6 col-lg-3">
                 <div className="overview-item overview-item--c1">

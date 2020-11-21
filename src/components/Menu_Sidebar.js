@@ -1,7 +1,11 @@
-import Reat from 'react'
+import React, {useEffect} from 'react'
 import {Link } from 'react-router-dom'
+import {loadScripts} from '../_utils/index'
 
-const Menu_Sidebar = function(props){
+const Menu_Sidebar  = props =>{
+    useEffect(() =>{
+        document.onload  = loadScripts()
+    })
     return( 
       <aside className="menu-sidebar d-none d-lg-block">
       <div className="logo">

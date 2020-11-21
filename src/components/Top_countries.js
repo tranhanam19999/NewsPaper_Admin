@@ -1,6 +1,9 @@
-import React from 'react'
-
-const Top_Countries = function(props){
+import React, {useEffect}from 'react'
+import {loadScripts} from '../_utils/'
+const Top_Countries  = props =>{
+    useEffect(() =>{
+        document.onload  = loadScripts()
+    },[])
     return (
         <div className="col-lg-3">
         <h2 className="title-1 m-b-25">Top countries</h2>

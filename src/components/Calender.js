@@ -1,6 +1,9 @@
-import React from 'react'
-
-const Calender = function(props){
+import React, {useEffect}from 'react'
+import {loadScripts} from '../_utils/'
+const Calender  = props =>{
+    useEffect(() =>{
+        document.onload  = loadScripts()
+    },[])
     return (
         <div className="col-lg-6">
         <div className="au-card au-card--no-shadow au-card--no-pad m-b-40">

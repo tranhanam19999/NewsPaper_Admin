@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Menu_Sidebar from '../../components/Menu_Sidebar'
 import MaterialTable from 'material-table'
+ 
 
-const index = function(props){
+const index  = props =>{
+    
     return (         
         <div className="page-wrapper">        
             <Menu_Sidebar/>

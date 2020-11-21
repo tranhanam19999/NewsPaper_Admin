@@ -1,6 +1,9 @@
-import React from 'react';
-
-const navbar_item = function(props){
+import React, {useEffect}from 'react'
+import {loadScripts} from '../_utils/'
+const navbar_item  = props =>{
+    useEffect(() =>{
+        document.onload  = loadScripts()
+    },[])
     return (
         <ul className="list-unstyled navbar__list">
             <li className="active has-sub">
