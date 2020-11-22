@@ -24,23 +24,12 @@ const index  = props =>{
                                     </div>
                                 </div>
                                 <div className="row m-t-25">
-                                    <Chart_in/>
-                                    <Chart_in/>
-                                    <Chart_in/>
-                                    <Chart_in/>                                          
-                                </div>
-                                <div className="row">
-                                    <Chart/>
-                                    <Chart/>               
-                                </div>
-                                <div className="row">
-                                    <Earning/>
-                                    <Top_Countries/>
-                                </div>
-                                <div className="row">
-                                    <Calender/>
-                                    <Calender/>              
-                                </div>
+                                    <Chart_in typeItem  = "account" number ="10368"  name ="members online"/>
+                                    <Chart_in typeItem  = "shop-cart" number ="388,688"  name ="items soild"/>
+                                    <Chart_in typeItem  = "calender" number ="1,086"  name ="this week"/>
+                                    <Chart_in typeItem  = "money" number ="$1,060,386"  name ="total earnings"/>                                          
+                                </div>                                
+                                <Chart/>                                                                                                   
                                 <div className="row">
                                     <Footer/>
                                 </div>

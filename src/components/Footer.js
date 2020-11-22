@@ -1,9 +1,7 @@
 import React, {useEffect}from 'react'
-import {loadScripts} from '../_utils/'
+
 const Footer  = props =>{
-    useEffect(() =>{
-        document.onload  = loadScripts()
-    },[])
+    
     return (
         <div className="col-md-12">
                 <div className="copyright">

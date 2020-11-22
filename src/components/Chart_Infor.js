@@ -5,20 +5,30 @@ const Chart_Infor  = props =>{
         document.onload  = loadScripts()
     },[])
     return (
+      
         <div className="col-sm-6 col-lg-3">
-                <div className="overview-item overview-item--c1">
+                <div className={props.typeItem == "account" ? "overview-item overview-item--c1": "" + 
+                    props.typeItem == "shop-cart" ? "overview-item overview-item--c2" : "" +
+                    props.typeItem == "calender" ? "overview-item overview-item--c3" : "" +
+                    props.typeItem == "money" ? "overview-item overview-item--c4" : "" }>
                   <div className="overview__inner">
                     <div className="overview-box clearfix">
                       <div className="icon">
-                        <i className="zmdi zmdi-account-o" />
+                        <i className={props.typeItem == "account" ? "zmdi zmdi-account-o": "" + 
+                                    props.typeItem == "shop-cart" ? "zmdi zmdi-shopping-cart" : "" +
+                                    props.typeItem == "calender" ? "zmdi zmdi-calendar-note" : "" +
+                                    props.typeItem == "money" ? "zmdi zmdi-money" : "" } />
                       </div>
                       <div className="text">
-                        <h2>10368</h2>
-                        <span>members online</span>
+                        <h3 style={{color:"white", fontWeight: "normal" }}>{props.number}</h3>
+                        <span>{props.name}</span>
                       </div>
                     </div>
-                    <div className="overview-chart">
-                      <canvas id="widgetChart1" />
+                    <div id="overview-chart">
+                      <canvas id={props.typeItem == "account" ? "widgetChart1": "" + 
+                            props.typeItem == "shop-cart" ? "widgetChart2" : "" +
+                            props.typeItem == "calender" ? "widgetChart3" : "" +
+                            props.typeItem == "money" ? "widgetChart4" : "" }/>
                     </div>
                   </div>
                 </div>

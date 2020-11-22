@@ -1,9 +1,5 @@
 import React, {useEffect}from 'react'
-import {loadScripts} from '../_utils/'
-const Overview  = props =>{
-    useEffect(() =>{
-        document.onload  = loadScripts()
-    },[])
+const Overview  = props =>{    
     return (
         
       <div className="overview-wrap">

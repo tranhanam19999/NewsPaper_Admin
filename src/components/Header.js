@@ -7,8 +7,9 @@ const Header  = props =>{
     return(        
         <header className="header-desktop">
         <div className="section__content section__content--p30">
-          <div className="container-fluid">
-            <div className="header-wrap">              
+          <div className="container-fluid" style={{justifyContent:'space-between', display: 'flex'}}>
+            <div className ="nope" style={{display: 'block'}}></div>
+            <div className="header-wrap" style={{display: 'block'}}>              
               <div className="header-button cc_cursor">               
                 <div className="account-wrap">
                   <div className="account-item clearfix js-item-menu">
