@@ -15,17 +15,22 @@ const Menu_Sidebar  = props =>{
           <ul className="list-unstyled navbar__list">
             <li>                
               <Link to ='/'>
-                  <i className="fas fa-chart-bar" />Dashboard
+                  <i className="fas fa-tachometer-alt" />Dashboard
               </Link>
             </li>
             <li>                
-                <Link to ='/Article'>
+                <Link to ='/article'>
                     <i className="fas fa-chart-bar" />Article
                 </Link>
               </li>
               <li>
-                <Link to ='/User'>
+                <Link to ='/user'>
                     <i className="fas fa-table" />User
+                </Link>
+              </li>                            
+              <li>
+                <Link to ='/comment'>
+                    <i className="fas fa-comments" />Comment
                 </Link>
               </li>                            
           </ul>

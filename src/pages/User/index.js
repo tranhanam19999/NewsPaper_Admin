@@ -1,38 +1,74 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import Menu_Sidebar from '../../components/Menu_Sidebar'
+import Header from '../../layouts/Header'
+import Naviagtion from '../../layouts/Naviagtion'
 import MaterialTable from 'material-table'
 import { colors } from '@material-ui/core'
 
-const index  = props =>{
+const User  = props =>{  
+    const { useState } = React;
   
-    return (         
+    const [columns, setColumns] = useState([
+      { title: 'Full Name', field: 'name' },
+      { title: 'Avatar', field: 'avatar', initialEditValue: 'initial edit value' },
+      { title: 'User Name', field: 'username', type: 'string' },
+      { title: 'Role', field: 'role' },   
+      { title: 'Status', field: 'status', type:'string' },
+    ]);
+  
+    const [data, setData] = useState([
+      { name: 'Charlie', avatar : 'IMG', username: 'John Dept', role: 'Customer', status: 'Active' },
+
+   /* { name: 'Zerya Betül', surname: 'Baran', birthYear: 2017, birthCity: 34 },*/
+    ]);
+  
+    return (
         <div className="page-wrapper">        
-            <Menu_Sidebar/>
-            <div className= "page-container">                
+            <Naviagtion/>
+            <div className= "page-container">           
                 <Header/>
-                <div className="main-content">
-                    <h1 >Đây là page User</h1>
-                    <div style={{ maxWidth: '100%', border:'10px' }}>
+                <div className="main-content">                    
+                    <div style={{ maxWidth: '100%', border:'10px', padding:'0 40px 0 40px' }}>
                         <MaterialTable
-                            columns={[
-                                { title: 'Name', field: 'name' },
-                                { title: 'ID', field: 'surname' },
-                                { title: 'Adress', field: 'birthYear', type: 'numeric' },
-                                { title: 'Number', field: 'birthCity', lookup: { 34: 'Nothing', 63: 'ToDo' } }
-                            ]}                                                       
-                            data={[{ name: 'Nam', surname: 'HCM', birthYear: 2000, birthCity: 63 },
-                            { name: 'Bang', surname: 'DN', birthYear: 2000, birthCity: 34 },
-                            { name: 'Luong', surname: 'HCM', birthYear: 200, birthCity: 63 },
-                            { name: 'Tu', surname: 'HCM', birthYear: 2000, birthCity: 34 }]}
-                            title="User Table"
-                        />
-                    </div>
-                    <Footer/>                    
+                        title="User Preview"
+                        columns={columns}
+                        data={data}
+                        editable={{
+                        onRowAdd: newData =>
+                            new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                setData([...data, newData]);
+                                
+                                resolve();
+                            }, 1000)
+                            }),
+                        onRowUpdate: (newData, oldData) =>
+                            new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                const dataUpdate = [...data];
+                                const index = oldData.tableData.id;
+                                dataUpdate[index] = newData;
+                                setData([...dataUpdate]);
+                
+                                resolve();
+                            }, 1000)
+                            }),
+                        onRowDelete: oldData =>
+                            new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                const dataDelete = [...data];
+                                const index = oldData.tableData.id;
+                                dataDelete.splice(index, 1);
+                                setData([...dataDelete]);
+                                
+                                resolve()
+                            }, 1000)
+                            }),
+                        }}
+                        /> 
+                    </div>                                  
                 </div>                        
             </div> 
-        </div>                                         
-    );
+        </div>  
+    );                
 }
-export default index;
+export default User;

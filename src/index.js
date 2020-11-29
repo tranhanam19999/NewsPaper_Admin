@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import Dashboard from './pages/Dashboard/index'
-import User from './pages/User/index'
-import Article from './pages/Article/index'
+import dashboard from './pages/Dashboard/index'
+import user from './pages/User/index'
+import article from './pages/Article/index'
+import comment from './pages/Comments/index'
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history"; 
 
@@ -12,9 +13,10 @@ const hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      <Route exact path='/' component={Dashboard} />
-      <Route path="/Article" component={Article} /> 
-      <Route path="/User" component={User} />                
+      <Route exact path='/' component={dashboard} />
+      <Route path="/article" component={article} /> 
+      <Route path="/user" component={user} />                
+      <Route path="/comment" component={comment} />                
     </Switch>
   </Router>,
   document.getElementById("root")

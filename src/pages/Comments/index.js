@@ -2,23 +2,22 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../layouts/Header'
 import Naviagtion from '../../layouts/Naviagtion'
 import MaterialTable from 'material-table'
+import { colors } from '@material-ui/core'
 
 
-const Article  = props =>{
+const Comment  = props =>{  
     const { useState } = React;
   
     const [columns, setColumns] = useState([
-      { title: 'Name', field: 'name' },
-      { title: 'Image', field: 'image', initialEditValue: 'initial edit value' },
-      { title: 'Content', field: 'content', type: 'string' },
-      { title: 'Category', field: 'category' },
-      { title: 'Number Comment', field: 'numberComment', type:'numeric' },
-      { title: 'Create Date', field: 'createDate', type:'numeric' },
+      { title: 'User Name', field: 'name' },
+      { title: 'Body', field: 'body', initialEditValue: 'initial edit value' },
+      { title: 'Article', field: 'article', type: 'string' },
+      { title: 'Create Date', field: 'createDate' },   
       { title: 'Status', field: 'status', type:'string' },
     ]);
   
     const [data, setData] = useState([
-      { name: 'Bang',image: 'IMG', content: 'Không có gì', category: 'CATEGORY', numberComment: '10',createDate:'10/12/2009', status: 'Active' },
+      { name: 'Billie', body : 'HZ', article: 'NO', createDate: '12/11/2020', status: 'Active' },
 
    /* { name: 'Zerya Betül', surname: 'Baran', birthYear: 2017, birthCity: 34 },*/
     ]);
@@ -31,7 +30,7 @@ const Article  = props =>{
                 <div className="main-content">                    
                     <div style={{ maxWidth: '100%', border:'10px', padding:'0 40px 0 40px' }}>
                         <MaterialTable
-                        title="Article Preview"
+                        title="Comment Preview"
                         columns={columns}
                         data={data}
                         editable={{
@@ -66,13 +65,11 @@ const Article  = props =>{
                             }, 1000)
                             }),
                         }}
-                        /> 
+                        />  
                     </div>                                  
                 </div>                        
             </div> 
         </div>  
-    );                      
+    );                
 }
-    
-export default Article;
-
+export default Comment;

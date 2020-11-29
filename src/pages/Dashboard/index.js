@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import Menu_Sidebar from '../../components/Menu_Sidebar'
+import Header from '../../layouts/Header'
+import Naviagtion from '../../layouts/Naviagtion'
 import Chart_in from '../../components/Chart_Infor'
 import Chart from '../../components/Chart_Total'
-import Top_Countries from '../../components/Top_countries'
-import Earning from '../../components/Earning'
-import Calender from '../../components/Calender'
 
 
-const index  = props =>{
+const Dashboard  = props =>{
     return (         
         <div className="page-wrapper">               
-                <Menu_Sidebar/>
+                <Naviagtion/>
                 <div className= "page-container">
                     <Header/>
                     <div className="main-content">
@@ -29,10 +25,7 @@ const index  = props =>{
                                     <Chart_in typeItem  = "calender" number ="1,086"  name ="this week"/>
                                     <Chart_in typeItem  = "money" number ="$1,060,386"  name ="total earnings"/>                                          
                                 </div>                                
-                                <Chart/>                                                                                                   
-                                <div className="row">
-                                    <Footer/>
-                                </div>
+                                <Chart/>                                                                                                                                   
                         </div>                        
                     </div>
                 </div>                        
@@ -40,4 +33,4 @@ const index  = props =>{
         </div>                                         
     );
 }
-export default index;
+export default Dashboard;
