@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux'
+import store from './store';
 import reportWebVitals from './reportWebVitals';
 import dashboard from './pages/Dashboard/index'
 import user from './pages/User/index'
@@ -11,14 +13,16 @@ import { createBrowserHistory } from "history";
 const hist = createBrowserHistory();
 
 ReactDOM.render(
-  <Router history={hist}>
-    <Switch>
-      <Route exact path='/' component={dashboard} />
-      <Route path="/article" component={article} /> 
-      <Route path="/user" component={user} />                
-      <Route path="/comment" component={comment} />                
-    </Switch>
-  </Router>,
+  <Provider store={store}>
+    <Router history={hist}>
+      <Switch>
+        <Route exact path='/' component={dashboard} />
+        <Route path="/article" component={article} /> 
+        <Route path="/user" component={user} />                
+        <Route path="/comment" component={comment} />                
+      </Switch>
+    </Router>
+  </Provider>,
   document.getElementById("root")
 );
 

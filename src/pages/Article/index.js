@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import { getArticle } from '../../store/listarticle'
 import Header from '../../layouts/Header'
 import Naviagtion from '../../layouts/Naviagtion'
 import MaterialTable from 'material-table'
@@ -6,31 +8,37 @@ import MaterialTable from 'material-table'
 
 const Article  = props =>{
     const { useState } = React;
+    const dispatch = useDispatch()
+    const listArticle = useSelector(state => {
+        console.log('im state ' , state ) ; return state.listarticle})
+    useEffect(() => {
+        dispatch(getArticle())
+    },[])
+    // const [columns, setColumns] = useState([
+    //   { title: 'Name', field: 'name' },
+    //   { title: 'Image', field: 'image', initialEditValue: 'initial edit value' },
+    //   { title: 'Content', field: 'content', type: 'string' },
+    //   { title: 'Category', field: 'category' },
+    //   { title: 'Number Comment', field: 'numberComment', type:'numeric' },
+    //   { title: 'Create Date', field: 'createDate', type:'numeric' },
+    //   { title: 'Status', field: 'status', type:'string' },
+    // ]);
   
-    const [columns, setColumns] = useState([
-      { title: 'Name', field: 'name' },
-      { title: 'Image', field: 'image', initialEditValue: 'initial edit value' },
-      { title: 'Content', field: 'content', type: 'string' },
-      { title: 'Category', field: 'category' },
-      { title: 'Number Comment', field: 'numberComment', type:'numeric' },
-      { title: 'Create Date', field: 'createDate', type:'numeric' },
-      { title: 'Status', field: 'status', type:'string' },
-    ]);
-  
-    const [data, setData] = useState([
-      { name: 'Bang',image: 'IMG', content: 'Không có gì', category: 'CATEGORY', numberComment: '10',createDate:'10/12/2009', status: 'Active' },
+//     const [data, setData] = useState([
+//       { name: 'Bang',image: 'IMG', content: 'Không có gì', category: 'CATEGORY', numberComment: '10',createDate:'10/12/2009', status: 'Active' },
 
-   /* { name: 'Zerya Betül', surname: 'Baran', birthYear: 2017, birthCity: 34 },*/
-    ]);
-  
-    return (
-        <div className="page-wrapper">        
+//    /* { name: 'Zerya Betül', surname: 'Baran', birthYear: 2017, birthCity: 34 },*/
+//     ]);
+    //const [data ,setData] = useState(listArticle)
+
+    return !listArticle ? <></> : (
+        <div className="page-wrapper">      
             <Naviagtion/>
             <div className= "page-container">           
                 <Header/>
                 <div className="main-content">                    
                     <div style={{ maxWidth: '100%', border:'10px', padding:'0 40px 0 40px' }}>
-                        <MaterialTable
+                        {/* <MaterialTable
                         title="Article Preview"
                         columns={columns}
                         data={data}
@@ -65,8 +73,7 @@ const Article  = props =>{
                                 resolve()
                             }, 1000)
                             }),
-                        }}
-                        /> 
+                        }}/>  */}
                     </div>                                  
                 </div>                        
             </div> 
