@@ -1,15 +1,15 @@
 import {configureStore} from '@reduxjs/toolkit'
 import {combineReducers} from 'redux'
-//import user from './user'
-import listarticle from './listarticle'
+import user from './user'
+import listbook from './listbook'
 import listuser from './listuser'
-//import listcmt from './listcmt'
+import listtrans from './listtrans'
 
 const reducer = combineReducers({
-    //user,
-    listarticle,
+    user,
+    listbook,
     listuser,
-    //listcmt,
+    listtrans,
 })
 
 const store = configureStore({
